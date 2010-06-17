@@ -97,7 +97,7 @@ var ev = (function (window, document, undefined) {
   
   return function (el) {
     if (this === window) {
-      return new Event(el);
+      return new ev(el);
     }
     this.el = el;
     this.addEvent = addEvent;
