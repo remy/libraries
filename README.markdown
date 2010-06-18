@@ -12,7 +12,7 @@ Only tested in Chrome & IE7, but I have a simple event "on", "fire" system that 
 
 ev(a[0]).on('click', function () {
   alert('clicked!');
-  Event(a[1]).fire('remy');
+  ev(a[1]).fire('remy');
 });
 
 ev(a[1]).on('remy', function (event) {
