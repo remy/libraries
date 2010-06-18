@@ -79,16 +79,15 @@ var ev = (function (window, document, undefined) {
           try {
             el['on' + type].call(el, data);
           } catch (e) {
-            var id = el[expando];
-            handlers[type] && handlers[type][id] && handlers[type][id].call(el, { type: type, data : data || {} });
-            while (el = el.parentNode) {
+            var id;
+            do {
               id = el[expando];
               if (!el || el.nodeType === 3 || el.nodeType === 8) {
                 return; // we're done - this shouldn't happen
               } else {
                 handlers[type][id] && handlers[type][id].call(el, { type: type, data : data || {} });
               }
-            }
+            } while (el = el.parentNode)
           }
         });
       };
