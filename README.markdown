@@ -1,20 +1,22 @@
-# Micro Libraries
+# Remy's Libraries
 
-Very early playing with micro libraries to perform a single specific job.
+This is a dumping ground for little libraries that I've written that serve a specific purpose, but don't weigh in big enough (in my eyes) to warrant an entire github repo. 
 
-# Events
+The aim will be to include documentation for each either here or in a [library].md file.
+
+# events.js / Events
 
 Only tested in Chrome & IE7, but I have a simple event "on", "fire" system that works but also supports custom events and bubbling.
 
 ## Example
 
-<pre><code>var a = document.getElementsByTagName('a');
+    var links = document.getElementsByTagName('a');
 
-ev(a[0]).on('click', function () {
-  alert('clicked!');
-  ev(a[1]).fire('remy');
-});
+    ev(links).on('click', function () {
+      alert('clicked!');
+      ev(this).fire('remy');
+    });
 
-ev(a[1]).on('remy', function (event) {
-  alert('a custom event fired: ' + event.type);
-});</code></pre>
+    ev(links).on('remy', function (event) {
+      alert('a custom event fired: ' + event.type);
+    });
