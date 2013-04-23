@@ -57,7 +57,7 @@ function extend(target, object, mapping, _path) {
     if (typeof value === "object" && value !== null && !Array.isArray(value)) {
       target[key] = extend(target[key] || {}, value, mapping, path);
     } else {
-      elements = $(mapping[path.join('.')] || '.');
+      elements = $(mapping[path.join('.')] || '☺');
 
       Object.defineProperty(target, key, {
         set: function (v) {
