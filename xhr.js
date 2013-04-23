@@ -28,6 +28,8 @@ function request(type, url, opts, callback) {
   };
 
   xhr.send(opts ? fd : null);
+  
+  return xhr;
 }
 
 var get = request.bind(this, 'GET');
