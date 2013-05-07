@@ -10,16 +10,18 @@ Only tested in Chrome & IE7, but I have a simple event "on", "fire" system that 
 
 ## Example
 
-    var links = document.getElementsByTagName('a');
+```javascript
+var links = document.getElementsByTagName('a');
 
-    ev(links).on('click', function () {
-      alert('clicked!');
-      ev(this).fire('remy');
-    });
+ev(links).on('click', function () {
+  alert('clicked!');
+  ev(this).fire('remy');
+});
 
-    ev(links).on('remy', function (event) {
-      alert('a custom event fired: ' + event.type);
-    });
+ev(links).on('remy', function (event) {
+  alert('a custom event fired: ' + event.type);
+});
+```
     
 # bind.js / Data Binding
 
