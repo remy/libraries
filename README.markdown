@@ -25,7 +25,7 @@ ev(links).on('remy', function (event) {
     
 # bind.js / Data Binding
 
-Simple data to HTML binding.
+Simple data to HTML binding (that also supports simple callbacks)
 
 ## Example
 
@@ -34,14 +34,23 @@ var data = Bind({
     me: {
         name: '@rem',
         score: 11
+    },
+    them: {
+      score: 0,
+      name: '@julieanne'
     }
 }, {
     'me.score': '#score',
-    'me.name': '.username'
+    'me.name': '.username',
+    'them.score': function (score) {
+      alert(data.them.name + ' now has a score of ' + score);
+    }
 });
 
 // updating data object updates the HTML, as the second arg is a data mapping
 data.me.score++; // updates #score element
+
+data.them.score++; // shows an alert with "@julieanne now has a score of 1"
 ```
 
 # xhr.js / XHR
