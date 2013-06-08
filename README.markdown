@@ -25,33 +25,7 @@ ev(links).on('remy', function (event) {
     
 # bind.js / Data Binding
 
-Simple data to HTML binding (that also supports simple callbacks)
-
-## Example
-
-```javascript
-var data = Bind({
-    me: {
-        name: '@rem',
-        score: 11
-    },
-    them: {
-      score: 0,
-      name: '@julieanne'
-    }
-}, {
-    'me.score': '#score',
-    'me.name': '.username',
-    'them.score': function (score) {
-      alert(data.them.name + ' now has a score of ' + score);
-    }
-});
-
-// updating data object updates the HTML, as the second arg is a data mapping
-data.me.score++; // updates #score element
-
-data.them.score++; // shows an alert with "@julieanne now has a score of 1"
-```
+bind.js used to live here, but I've moved it to it's own repo: [https://github.com/remy/bind](https://github.com/remy/bind).
 
 # xhr.js / XHR
 
